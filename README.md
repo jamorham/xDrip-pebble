@@ -8,3 +8,5 @@ Alerts have been removed except for the falling rate-of-change alerts.
 This watch face is meant for patients to use with xDrip, not for parents/carers.
 All notifications/alerts are generated within xDrip (except for falling rate-of-change).
 Ensure you enable notifications from xDrip in the Pebble App, and enable Third Party notifications, otherwise these will NOT come through on the pebble.
+
+<a href="https://ibb.co/nbhkdn"><img src="https://preview.ibb.co/ijDrJn/IMG_1236.jpg" alt="IMG_1236" border="0"></a>
