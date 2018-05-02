@@ -1421,8 +1421,8 @@ static void load_apptime(){
 		APP_LOG(APP_LOG_LEVEL_DEBUG, "LOAD APPTIME, FORMATTED APP TIMEAGO STRING: %s", formatted_app_timeago);
 		#endif
 		//text_layer_set_text(time_app_layer, formatted_app_timeago);
-		text_layer_set_text(time_app_layer, insulinOnBoard);
-		text_layer_set_text(appicon_layer, tempBasalRate);
+		text_layer_set_text(time_app_layer, tempBasalRate);
+		text_layer_set_text(appicon_layer, insulinOnBoard);
 		//APP_LOG(APP_LOG_LEVEL_INFO, "LOAD APPTIME, CHECK FOR PHONE OFF ICON");
 		// check to see if we need to set phone off icon
 		//APP_LOG(APP_LOG_LEVEL_DEBUG, "LOAD APPTIME, app_timeago_diff: %d, PHONEOUT_WAIT_MIN: %d, app_label_buffer: %s", app_timeago_diff, PHONEOUT_WAIT_MIN, app_label_buffer);
