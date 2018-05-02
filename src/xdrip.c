@@ -177,8 +177,8 @@ enum CgmKey {
 	CGM_DLTA_KEY = 0x4,		// TUPLE_CSTRING, MAX 5 BYTES (BG DELTA, -100 or -10.0)
 	CGM_UBAT_KEY = 0x5,		// TUPLE_CSTRING, MAX 3 BYTES (UPLOADER BATTERY, 100)
 	CGM_NAME_KEY = 0x6,		// TUPLE_CSTRING, MAX 9 BYTES (Christine)
-	LOOP_IOB_KEY = 0x7,
-	LOOP_TBR_KEY = 0x8
+	LOOP_TBR_KEY = 0xc,     // Loop Data - Temp. Basal Rate
+	LOOP_IOB_KEY = 0xd      // Loop Data - Insulin on Board
 	
 }; 
 // TOTAL MESSAGE DATA 4x3+2+5+3+9 = 31 BYTES
@@ -1715,6 +1715,7 @@ void sync_tuple_changed_callback_cgm(const uint32_t key, const Tuple* new_tuple,
 	// CODE START
 	
 	switch (key) {
+        
 
 	case CGM_ICON_KEY:;
 		#if DEBUG_LEVEL > 0
@@ -1776,8 +1777,8 @@ void sync_tuple_changed_callback_cgm(const uint32_t key, const Tuple* new_tuple,
 		//APP_LOG(APP_LOG_LEVEL_INFO, "SYNC TUPLE: T1D NAME");
 		//text_layer_set_text(t1dname_layer, new_tuple->value->cstring);
 		break; // break for CGM_NAME_KEY
-		
-	case LOOP_IOB_KEY:;
+    
+    case LOOP_IOB_KEY:;
 		//APP_LOG(APP_LOG_LEVEL_INFO, "SYNC TUPLE: IOB CURRENT");
 		strncpy(insulinOnBoard, new_tuple->value->cstring, BG_MSGSTR_SIZE);
 		load_apptime();
