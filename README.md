@@ -10,6 +10,7 @@ All notifications/alerts are generated within xDrip (except for falling rate-of-
 Ensure you enable notifications from xDrip in the Pebble App, and enable Third Party notifications, otherwise these will NOT come through on the pebble.
 
 <a href="https://ibb.co/dtUFdn"><img src="https://preview.ibb.co/eR5oyn/IMG_1238.jpg" alt="IMG_1238" border="0"></a>
+
 Choose "Standard Watchface (old)" in xDrip and activate "xdrip Statusline (watch)" in your ConfigBuilder of AAPS.
 Then install this watchface manually over the existing one:
 Activate the developer option in your pebble app and have a look at the given IP adress.
