@@ -15,5 +15,6 @@ Choose "Standard Watchface (old)" in xDrip and activate "xdrip Statusline (watch
 Then install this watchface manually over the existing one:
 Activate the developer option in your pebble app and have a look at the given IP adress.
 Switch to the main directory from terminal and execute:
-> export PEBBLE_PHONE="192.168.xxx.xxx"
-> pebble install
+
+export PEBBLE_PHONE="192.168.xxx.xxx"
+pebble install
