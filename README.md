@@ -16,5 +16,5 @@ Then install this watchface manually over the existing one:
 Activate the developer option in your pebble app and have a look at the given IP adress.
 Switch to the main directory from terminal and execute:
 
-export PEBBLE_PHONE="192.168.xxx.xxx"
+export PEBBLE_PHONE="192.168.xxx.xxx" \n
 pebble install
