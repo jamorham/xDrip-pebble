@@ -399,7 +399,7 @@ static void battery_handler(BatteryChargeState charge_state) {
 	if(charge_state.is_charging) {
 		#ifdef PBL_COLOR
 		//APP_LOG(APP_LOG_LEVEL_INFO, "COLOR DETECTED");
-		text_layer_set_text_color(watch_battlevel_layer, GColorDukeBlue);
+		text_layer_set_text_color(watch_battlevel_layer, GColorBlack);
 		text_layer_set_background_color(watch_battlevel_layer, GColorGreen);
 		#else
 		//APP_LOG(APP_LOG_LEVEL_INFO, "BW DETECTED");
@@ -409,17 +409,17 @@ static void battery_handler(BatteryChargeState charge_state) {
 	} else {
 		#ifdef PBL_COLOR
 		//APP_LOG(APP_LOG_LEVEL_INFO, "COLOR DETECTED");
-		if(charge_state.charge_percent > 40) {
+		if(charge_state.charge_percent > 30) {
 			//APP_LOG(APP_LOG_LEVEL_INFO, "BATTERY > 40");
 			text_layer_set_text_color(watch_battlevel_layer, GColorGreen);
-		} else if (charge_state.charge_percent > 20) {
+		} else if (charge_state.charge_percent > 10) {
 			//APP_LOG(APP_LOG_LEVEL_INFO, "BATTERY > 20");
 			text_layer_set_text_color(watch_battlevel_layer, GColorYellow);
 		} else {
 			//APP_LOG(APP_LOG_LEVEL_INFO, "BATTERY <= 20");
 			text_layer_set_text_color(watch_battlevel_layer, GColorRed);
 		}
-		text_layer_set_background_color(watch_battlevel_layer, GColorDukeBlue);
+		text_layer_set_background_color(watch_battlevel_layer, GColorBlack);
 		#else	
 		//APP_LOG(APP_LOG_LEVEL_INFO, "BW DETECTED");
 		text_layer_set_text_color(watch_battlevel_layer, GColorWhite);
@@ -1599,7 +1599,7 @@ static void load_bg_delta() {
 	if((currentBG_isMMOL && current_bg == 55) || (!currentBG_isMMOL && (current_bg == 100 || current_bg == 99))) {
 		text_layer_set_text(message_layer, "BAZINGA!");
 		#ifdef PBL_COLOR
-		text_layer_set_text_color(message_layer, GColorDukeBlue);
+		text_layer_set_text_color(message_layer, GColorBlack);
 		#endif
 	} else {
 
@@ -1908,8 +1908,8 @@ void window_load_cgm(Window *window_cgm) {
 	
 	// DELTA BG
 	#ifdef PBL_COLOR
-	message_layer = text_layer_create(GRect(0, 33, 144, 55));
-	text_layer_set_text_color(message_layer, GColorDukeBlue);
+	message_layer = text_layer_create(GRect(0,30, 144, 55));
+	text_layer_set_text_color(message_layer, GColorBlack);
 	text_layer_set_background_color(message_layer, GColorWhite);
 	text_layer_set_font(message_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
 	#else
@@ -1922,7 +1922,7 @@ void window_load_cgm(Window *window_cgm) {
 	layer_add_child(window_layer_cgm, text_layer_get_layer(message_layer));
 
 	// ARROW OR SPECIAL VALUE
-	icon_layer = bitmap_layer_create(GRect(85, -7, 78, 50));
+	icon_layer = bitmap_layer_create(GRect(85, -9, 78, 50));
 	bitmap_layer_set_alignment(icon_layer, GAlignTopLeft);
 	bitmap_layer_set_background_color(icon_layer, GColorWhite);
 	layer_add_child(window_layer_cgm, bitmap_layer_get_layer(icon_layer));
@@ -1941,7 +1941,7 @@ void window_load_cgm(Window *window_cgm) {
 	// APP TIME AGO READING (CHANGED TO TBR FOR LOOPING)
 	#ifdef PBL_COLOR
 	appicon_layer = text_layer_create(GRect(80, 54, 60, 28));
-	text_layer_set_text_color(appicon_layer, GColorDukeBlue);
+	text_layer_set_text_color(appicon_layer, GColorBlack);
 	text_layer_set_background_color(appicon_layer, GColorWhite);
 	#else
 	appicon_layer = text_layer_create(GRect(80, 54, 60, 28));
@@ -1955,7 +1955,7 @@ void window_load_cgm(Window *window_cgm) {
 	// APP TIME AGO READING (CHANGED TO IOB FOR LOOPING)
 	#ifdef PBL_COLOR
 	time_app_layer = text_layer_create(GRect(43, 54, 60, 28));
-	text_layer_set_text_color(time_app_layer, GColorDukeBlue);
+	text_layer_set_text_color(time_app_layer, GColorBlack);
 	text_layer_set_background_color(time_app_layer, GColorWhite);
 	#else
 	time_app_layer = text_layer_create(GRect(43, 54, 60, 28));
@@ -1968,8 +1968,8 @@ void window_load_cgm(Window *window_cgm) {
 	
 	// BG
 	#ifdef PBL_COLOR
-	bg_layer = text_layer_create(GRect(0, -5, 95, 47));
-	text_layer_set_text_color(bg_layer, GColorDukeBlue);
+	bg_layer = text_layer_create(GRect(0, -7, 95, 47));
+	text_layer_set_text_color(bg_layer, GColorBlack);
 	text_layer_set_background_color(bg_layer, GColorWhite);
 	#else
 	bg_layer = text_layer_create(GRect(0, -5, 95, 47));
@@ -1984,7 +1984,7 @@ void window_load_cgm(Window *window_cgm) {
 	// CGM TIME AGO READING
 	#ifdef PBL_COLOR
 	cgmtime_layer = text_layer_create(GRect(5, 54, 40, 28));
-	text_layer_set_text_color(cgmtime_layer, GColorDukeBlue);
+	text_layer_set_text_color(cgmtime_layer, GColorBlack);
 	text_layer_set_background_color(cgmtime_layer, GColorWhite);
 	#else
 	cgmtime_layer = text_layer_create(GRect(5, 54, 40, 28));
@@ -1997,9 +1997,9 @@ void window_load_cgm(Window *window_cgm) {
 
 	// PHONE BATTERY LEVEL
 	#ifdef PBL_COLOR
-	battlevel_layer = text_layer_create(GRect(0, 148, 59, 18));
+	battlevel_layer = text_layer_create(GRect(0, 150, 80, 18));
 	text_layer_set_text_color(battlevel_layer, GColorGreen);
-	text_layer_set_background_color(battlevel_layer, GColorDukeBlue);
+	text_layer_set_background_color(battlevel_layer, GColorBlack);
 	#else
 	battlevel_layer = text_layer_create(GRect(0, 148, 59, 18));
 	text_layer_set_text_color(battlevel_layer, GColorWhite);
@@ -2013,7 +2013,7 @@ void window_load_cgm(Window *window_cgm) {
 	BatteryChargeState charge_state=battery_state_service_peek();
 	//snprintf(watch_battlevel_percent, BATTLEVEL_FORMATTED_SIZE, "W:%i%%", charge_state.charge_percent);
 	#ifdef PBL_COLOR
-	watch_battlevel_layer = text_layer_create(GRect(81, 148, 59, 18));
+	watch_battlevel_layer = text_layer_create(GRect(65, 150, 80, 18));
 	APP_LOG(APP_LOG_LEVEL_INFO, "COLOR DETECTED");
 	#else
 	APP_LOG(APP_LOG_LEVEL_INFO, "BW DETECTED");
@@ -2029,7 +2029,7 @@ void window_load_cgm(Window *window_cgm) {
 	#ifdef PBL_COLOR
 	time_watch_layer = text_layer_create(GRect(0, 82, 144, 44));
 	text_layer_set_text_color(time_watch_layer, GColorWhite);
-	text_layer_set_background_color(time_watch_layer, GColorDukeBlue);
+	text_layer_set_background_color(time_watch_layer, GColorBlack);
 	#else
 	time_watch_layer = text_layer_create(GRect(0, 82, 144, 44));
 	text_layer_set_text_color(time_watch_layer, GColorWhite);
@@ -2041,9 +2041,9 @@ void window_load_cgm(Window *window_cgm) {
 	
 	// CURRENT ACTUAL DATE FROM APP
 	#ifdef PBL_COLOR
-	date_app_layer = text_layer_create(GRect(0, 120, 144, 25));
+	date_app_layer = text_layer_create(GRect(0, 124, 144, 26));
 	text_layer_set_text_color(date_app_layer, GColorWhite);
-	text_layer_set_background_color(date_app_layer, GColorDukeBlue);
+	text_layer_set_background_color(date_app_layer, GColorBlack);
 	#else
 	date_app_layer = text_layer_create(GRect(0, 120, 144, 25));
 	text_layer_set_text_color(date_app_layer, GColorWhite);
